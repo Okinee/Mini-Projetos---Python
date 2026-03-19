@@ -8,21 +8,25 @@ print("==============================================\n")
 print("Seja Bem vindo ao jogo de Pedra, Papel e Tesoura! \n")
 print("==============================================\n")
 
-start = input("Deseja começar o jogo? (S/N)\n")
+start = input("Deseja começar o jogo? (S/N)\n").upper()
 if start != "S":
-  print("Ate a proxima jogar!")
+  print("Ate a proxima jogador!")
   quit()
 
 while True:
   jokenpo_choice = jokenpo[random.randint(0,2)]
-  user_choice = input("Digite sua escolha: \n")
-  print("\nA pontuação do computador foi: {}".format(jokenpo_choice))
+  user_choice = input("Digite sua escolha: \n").lower()
+  if user_choice not in jokenpo:
+    print("\nEntrada invalida. Escolha entre pedra, papel ou tesoura\n")
+    continue
+  print("\nA escolha do computador foi: {}".format(jokenpo_choice))
   if (user_choice == jokenpo_choice):
     print("\n==============================================\n")
-    print("Empate!")
-    print ("Sua pontuação foi: {}".format(user_points))
+    print("Empate!\n")
+    print ("Sua pontuação foi: {}\n".format(user_points))
+    print ("A pontuação do computador foi: {}".format(computer_points))  
     print("\n==============================================\n")
-    again = input("Deseja jogar novamente? (S/N)\n")
+    again = input("Deseja jogar novamente? (S/N)\n").upper()
     if again != "S":
       break
     print("\n")
@@ -30,10 +34,10 @@ while True:
     user_points += 1
     print("\n==============================================\n")
     print("Você Ganhou!\n")
-    print ("Sua pontuação foi: {}".format(user_points))
+    print ("Sua pontuação foi: {}\n".format(user_points))
     print ("A pontuação do computador foi: {}".format(computer_points))    
     print("\n==============================================\n")
-    again = input("Deseja jogar novamente? (S/N)\n")
+    again = input("Deseja jogar novamente? (S/N)\n").upper()
     if again != "S":
       break
     print("\n")   
@@ -41,10 +45,10 @@ while True:
     user_points += 1
     print("\n==============================================\n")
     print("Você Ganhou!\n")
-    print ("Sua pontuação foi: {}".format(user_points))
+    print ("Sua pontuação foi: {}\n".format(user_points))
     print ("A pontuação do computador foi: {}".format(computer_points))    
     print("\n==============================================\n")
-    again = input("Deseja jogar novamente? (S/N)\n")
+    again = input("Deseja jogar novamente? (S/N)\n").upper()
     if again != "S":
       break
     print("\n")  
@@ -52,10 +56,10 @@ while True:
     user_points += 1
     print("\n==============================================\n")
     print("Você Ganhou!\n")
-    print ("Sua pontuação foi: {}".format(user_points))
+    print ("Sua pontuação foi: {}\n".format(user_points))
     print ("A pontuação do computador foi: {}".format(computer_points))   
     print("\n==============================================\n")
-    again = input("Deseja jogar novamente? (S/N)\n")
+    again = input("Deseja jogar novamente? (S/N)\n").upper()
     if again != "S":
       break
     print("\n") 
@@ -66,7 +70,7 @@ while True:
     print ("Sua pontuação foi: {}\n".format(user_points))
     print ("A pontuação do computador foi: {}".format(computer_points))
     print("\n==============================================\n")
-    again = input("Deseja jogar novamente? (S/N)\n")
+    again = input("Deseja jogar novamente? (S/N)\n").upper()
     if again != "S":
       break
     print("\n") 
