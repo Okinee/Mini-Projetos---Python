@@ -8,12 +8,14 @@ print("==============================================\n")
 start = input("Deseja começar o jogo? (S/N) \n")
 if start != "S":
     quit()
-choice_number = input("\nDigite o valor limite do desafio: ")
-if choice_number.isdigit():
-    choice_number = int(choice_number)
-else:
-    print("Erro no codigo, Por favor, digite um número válido.")
-    quit()
+while True:
+    choice_number = input("\nDigite o valor limite do desafio: ")
+    if choice_number.isdigit():
+        choice_number = int(choice_number)
+        break
+    else:
+        print("Erro no codigo, Por favor, digite um número válido.")
+        continue
 
 computer_number = random.randint(0, choice_number)
 
