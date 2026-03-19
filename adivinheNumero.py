@@ -14,7 +14,10 @@ while True:
         choice_number = int(choice_number)
         break
     else:
-        print("Erro no codigo, Por favor, digite um número válido.")
+        print("\nErro no codigo, Por favor, digite um número válido.")
+        middle = input("\nDeseja continuar? (S/N) \n")
+        if middle != "S":
+            quit()   
         continue
 
 computer_number = random.randint(0, choice_number)
